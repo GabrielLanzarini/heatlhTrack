@@ -24,9 +24,6 @@
 }
 
 .error_message {
-    position: absolute;
-    bottom: -1.2rem;
-    left: 0;
     font-size: 0.8rem;
     color: #e85151;
 }
@@ -34,4 +31,19 @@
 .error_input {
     outline: solid 1px #e85151;
     background-color: #ffb6b6;
+}
+
+.warning_icon {
+    width: 1rem;
+    fill: #e85151;
+}
+
+.error_container {
+    position: absolute;
+    bottom: -1.2rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row;
 }
