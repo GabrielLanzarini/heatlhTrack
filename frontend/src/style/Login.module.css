@@ -1,0 +1,72 @@
+.main_container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.left_container {
+    background-size: cover;
+    background-position: center;
+}
+
+.right_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.inputs_container,
+.right_container_int {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.grey_input {
+    background-color: #ececec;
+}
+
+.green_button {
+    background-color: #4cbec4;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.green_button,
+.grey_input {
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+}
+
+hr {
+    border: solid 1px #e8e8e8;
+}
+
+p {
+    align-self: center;
+}
+
+p a {
+    color: #4cbec4;
+}
+
+.input_container {
+    position: relative;
+    width: 100%;
+}
+
+.error_message {
+    position: absolute;
+    bottom: -1.2rem;
+    left: 0;
+    font-size: 0.8rem;
+    color: #e85151;
+}
+
+.error_input {
+    outline: solid 1px #e85151;
+    background-color: #ffb6b6;
+}

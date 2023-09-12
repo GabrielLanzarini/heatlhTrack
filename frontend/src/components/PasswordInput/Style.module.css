@@ -1,0 +1,37 @@
+.input_password_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.eye_icon {
+    position: absolute;
+    width: 1.5rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.grey_input {
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: #ececec;
+    padding: 1rem 1rem;
+}
+
+.input_container {
+    position: relative;
+    width: 100%;
+}
+
+.error_message {
+    position: absolute;
+    bottom: -1.2rem;
+    left: 0;
+    font-size: 0.8rem;
+    color: #e85151;
+}
+
+.error_input {
+    outline: solid 1px #e85151;
+    background-color: #ffb6b6;
+}
