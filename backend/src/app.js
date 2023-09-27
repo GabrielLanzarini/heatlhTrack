@@ -3,9 +3,11 @@ const router = require("./routes")
 const sequelize = require("./databaseCon")
 const cors = require("cors")
 const { json } = require("express")
+const cookie = require("cookie-parser")
 const app = express()
 
 sequelize.authenticate().then(() => {
+    app.use(cookie())
     app.use(json())
     app.use(
         cors({

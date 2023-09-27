@@ -1,0 +1,49 @@
+.main_container {
+    display: flex;
+    flex-grow: 1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.dashboard_container {
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    padding: 1rem;
+    flex-grow: 1;
+    position: relative;
+}
+
+.page_name {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.page_section {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.page_text_container {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.top_container {
+    background-color: "red";
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.date_container {
+    display: flex;
+    gap: 2rem;
+}
+
+.date_text {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+

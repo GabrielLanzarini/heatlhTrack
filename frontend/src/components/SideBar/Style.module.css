@@ -1,0 +1,83 @@
+.main_container {
+    width: 15rem;
+    border-radius: 1rem;
+    background-color: white;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.top_container {
+    gap: 2rem;
+}
+
+.top_container,
+.main_container,
+.options_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon_container {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    align-self: center;
+    background-color: #9ceaef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_container h1 {
+    color: #1e878d;
+    font-size: 3rem;
+}
+
+.options_container {
+    gap: 0.5rem;
+}
+
+.icon_active {
+    border-radius: 100%;
+    fill: #4cbec4;
+    width: 4rem;
+    background-color: #9ceaef;
+    padding: 1rem;
+}
+
+.label_active{
+    color: #4CBEC4;
+    font-weight: 500;
+
+}
+
+.icon_inactive {
+    border-radius: 100%;
+    fill: #7c7c7c;
+    width: 4rem;
+    padding: 1rem;
+}
+
+.icon_logout {
+    border-radius: 100%;
+    fill: #f67878;
+    width: 4rem;
+    padding: 1rem;
+}
+
+.icon_settings {
+    border-radius: 100%;
+    fill: #7c7c7c;
+    width: 4rem;
+    padding: 1rem;
+}
+
+.options_container div {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.options_container * {
+    cursor: pointer;
+}

@@ -2,12 +2,14 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import "./style/index.css"
-import 'animate.css'
+import "animate.css"
 import DoctorLogin from "./pages/DoctorLogin"
+import DoctorConfig from "./pages/DoctorConfig"
 import DoctorRegister from "./pages/DoctorRegister"
 import PacientLogin from "./pages/PacientLogin"
 import PacientRegister from "./pages/PacientRegister"
 import Teste from "./pages/Teste"
+import PacientConfig from "./pages/PacientConfig"
 
 const router = createBrowserRouter([
     {
@@ -27,8 +29,12 @@ const router = createBrowserRouter([
         path: "pacient/register",
     },
     {
-        element: <Teste />,
-        path: "",
+        element: <DoctorConfig />,
+        path: "doctor/config",
+    },
+    {
+        element: <PacientConfig />,
+        path: "pacient/config",
     },
 ])
 
@@ -38,5 +44,3 @@ root.render(
         <RouterProvider router={router} />
     </React.StrictMode>
 )
-
-

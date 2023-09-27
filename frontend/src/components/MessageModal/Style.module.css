@@ -1,0 +1,19 @@
+.main_container {
+    position: absolute;
+    z-index: 1;
+    right: 25px;
+    top: 25px;
+    width: 20rem;
+    height: 8rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4cbec4;
+}
+
+.main_container p {
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+}

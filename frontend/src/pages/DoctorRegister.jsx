@@ -1,7 +1,7 @@
 import { useState } from "react"
 import style from "../style/Register.module.css"
 import { Link } from "react-router-dom"
-import { DefaultInput, PasswordInput } from "../components/PasswordInput/PasswordInput"
+import { DefaultInput, PasswordInput } from "../components/Inputs/Inputs"
 import { CPFValidator } from "../helper/cpfValidator"
 import axios from "axios"
 import config from "../config.json"
@@ -79,7 +79,7 @@ export default function DoctorRegister() {
                         <path d="M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z"></path>
                     </svg>
                     <p>Congratulations, your registration was successful!</p>
-                    <Link to={`/doctor/login`} className={style.green_button}>
+                    <Link to={`/doctor/login`} className="green_button">
                         Login page
                     </Link>
                 </div>
@@ -132,7 +132,7 @@ export default function DoctorRegister() {
                             </div>
                         </div>
                     </div>
-                    <button onClick={handleRegister} className={`${style.green_button}`}>
+                    <button onClick={handleRegister} className="green_button">
                         Register
                     </button>
                     <hr />

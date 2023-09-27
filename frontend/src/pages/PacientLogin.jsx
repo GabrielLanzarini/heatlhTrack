@@ -1,7 +1,7 @@
 import { useState } from "react"
 import style from "../style/Login.module.css"
 import { Link, useNavigate } from "react-router-dom"
-import { DefaultInput, PasswordInput } from "../components/PasswordInput/PasswordInput"
+import { DefaultInput, PasswordInput } from "../components/Inputs/Inputs"
 import config from "../config.json"
 import axios from "axios"
 
@@ -41,7 +41,7 @@ export default function DoctorLogin() {
                         <DefaultInput errorMessage={errors} handleValue={handleValue} name="email" value={values} placeholder="Email" />
                         <PasswordInput errorMessage={errors} handleValue={handleValue} name="password" value={values} placeholder="Password" />
                     </div>
-                    <button onClick={handleLogin} className={style.green_button}>
+                    <button onClick={handleLogin} className="green_button">
                         Login
                     </button>
                     <hr />
