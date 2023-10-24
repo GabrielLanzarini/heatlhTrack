@@ -1,6 +1,6 @@
 import style from "./Style.module.css"
 
-export function SideBarDoctor() {
+export function SideBarDoctor({ pacientData }) {
     return (
         <div className={style.main_container}>
             <div className={style.top_container}>

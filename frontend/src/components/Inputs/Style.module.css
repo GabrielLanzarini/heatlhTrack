@@ -1,41 +1,41 @@
 .input_password_container {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: center
 }
 
 .eye_icon {
     position: absolute;
     width: 1.5rem;
     right: 1rem;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .grey_input {
     width: 100%;
-    border-radius: 0.5rem;
+    border-radius: .5rem;
     background-color: #ececec;
-    padding: 1rem 1rem;
+    padding: 1rem 1rem
 }
 
 .input_container {
     position: relative;
-    width: 100%;
+    width: 100%
 }
 
 .error_message {
-    font-size: 0.8rem;
-    color: #e85151;
+    font-size: .8rem;
+    color: #e85151
 }
 
 .error_input {
     outline: solid 1px #e85151;
-    background-color: #ffb6b6;
+    background-color: #ffb6b6
 }
 
 .warning_icon {
     width: 1rem;
-    fill: #e85151;
+    fill: #e85151
 }
 
 .error_container {
@@ -45,5 +45,70 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    flex-direction: row;
+    flex-direction: row
+}
+
+.input_container_specialities {
+    gap: .5rem
+}
+
+.input_container_specialities {
+    display: flex;
+    flex-direction: column
+}
+
+.add_input_container {
+    display: flex;
+    align-items: center;
+    position: relative
+}
+
+.button_add:focus,
+.button_add:hover {
+    background-color: #53ced4
+}
+
+.button_add {
+    transition: all 0.2s;
+    position: absolute;
+    right: .5rem;
+    background-color: #4cbec4;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    color: #fff
+}
+
+.card_container * {
+    user-select: none;
+    color: #fff
+}
+
+.card_container {
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #4cbec4;
+    width: fit-content;
+    gap: 1rem;
+    padding: .2rem 1rem;
+    border-radius: 2rem
+}
+
+.card_container p {
+    font-size: 1rem;
+    font-weight: 300
+}
+
+.card_container span {
+    font-size: 1rem;
+    transform: rotate(45deg)
+}
+
+.cards_container {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap
 }

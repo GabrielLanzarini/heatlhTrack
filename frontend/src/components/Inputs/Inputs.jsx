@@ -13,7 +13,7 @@ export function PasswordInput({ handleValue, value, name, label, errorMessage, p
                 <input
                     placeholder={placeholder}
                     id={name}
-                    onChange={(e) => handleValue(name, e.target.value)}
+                    onChange={handleValue}
                     value={value[name]}
                     type={view ? "password" : "text"}
                     className={`${style.grey_input}  ${errorMessage?.[name] && style.error_input}`}
@@ -60,7 +60,7 @@ export function DefaultInput({ handleValue, value, name, label, errorMessage, pl
                 maxLength={maxLenght}
                 placeholder={placeholder}
                 id={name}
-                onChange={(e) => handleValue(name, e.target.value)}
+                onChange={handleValue}
                 value={value[name]}
                 type="text"
                 className={`${style.grey_input} ${errorMessage?.[name] && style.error_input}`}
@@ -74,6 +74,53 @@ export function DefaultInput({ handleValue, value, name, label, errorMessage, pl
                     <span className={style.error_message}>{errorMessage?.[name]}</span>
                 </div>
             )}
+        </div>
+    )
+}
+
+export function SpecialitiesInput({ handleValue, name, value, clearValue }) {
+    const [specialitieArray, setSpecialitieArray] = useState([])
+    
+    const handleAddSpecialitie = () => {
+        if (value[name].length <= 2) return
+        setSpecialitieArray((prev) => [...prev, value[name]])
+        clearValue()
+    }
+
+    const handleRemoveSpecialitie = (index) => {
+        setSpecialitieArray((prev) => {
+            const updateArray = [...prev]
+            updateArray.splice(index, 1)
+            return updateArray
+        })
+    }
+
+    return (
+        <div className={`${style.input_container} ${style.input_container_specialities}`}>
+            <div>
+                <label htmlFor={name}>Specialities</label>
+                <div className={style.add_input_container}>
+                    <input
+                        onKeyDown={(e) => e.key === "Enter" && handleAddSpecialitie()}
+                        id={name}
+                        onChange={handleValue}
+                        value={value[name]}
+                        type="text"
+                        className={`${style.grey_input} `}
+                    />
+                    <button onClick={handleAddSpecialitie} className={style.button_add}>
+                        +
+                    </button>
+                </div>
+            </div>
+            <div className={style.cards_container}>
+                {specialitieArray?.map((a, i) => (
+                    <button onClick={() => handleRemoveSpecialitie(i)} key={i} className={style.card_container}>
+                        <p>{a}</p>
+                        <span>+</span>
+                    </button>
+                ))}
+            </div>
         </div>
     )
 }

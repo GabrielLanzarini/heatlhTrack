@@ -1,30 +1,26 @@
 import { useState } from "react"
-import style from "../style/Login.module.css"
+import style from "./Login.module.css"
 import { Link, useNavigate } from "react-router-dom"
-import { DefaultInput, PasswordInput } from "../components/Inputs/Inputs"
-import axios from "axios"
-import config from "../config.json"
+import { DefaultInput, PasswordInput } from "../../components/Inputs/Inputs"
+import { loginDoctor } from "../../data/doctor"
+
 
 export default function DoctorLogin() {
     const [values, setValues] = useState({ email: "", password: "" })
-    const [errors, setErrors] = useState({ email: "", password: "" })
+    const [errors, setErrors] = useState()
     const navigate = useNavigate()
 
-    const handleValue = (field, value) => setValues((prev) => ({ ...prev, [field]: value }))
-
+    const handleValue = ({ target }) => setValues((prev) => ({ ...prev, [target.id]: target.value }))
     const handleErrors = (field, value) => setErrors((prev) => ({ ...prev, [field]: value }))
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post(`${config.base_url}/doctor/login`, { email: values.email, password: values.password }, { withCredentials: true })
-            console.log(response.status)
-            if (response.status === 200) navigate("/")
-        } catch (err) {
-            const { response } = err
-            console.log(response)
-            if (response.status === 404) return handleErrors("email", response.data.message)
+            await loginDoctor(values)
+            navigate("/doctor/config")
+        } catch ({ status, data }) {
+            if (status === 404) return handleErrors("email", data)
             handleErrors("email", "")
-            if (response.status === 401) return handleErrors("password", response.data.message)
+            if (status === 401) return handleErrors("password", data)
             handleErrors("password", "")
         }
     }

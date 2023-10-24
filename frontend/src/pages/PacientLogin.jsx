@@ -1,5 +1,5 @@
 import { useState } from "react"
-import style from "../style/Login.module.css"
+import style from "./DoctorLogin/Login.module.css"
 import { Link, useNavigate } from "react-router-dom"
 import { DefaultInput, PasswordInput } from "../components/Inputs/Inputs"
 import config from "../config.json"

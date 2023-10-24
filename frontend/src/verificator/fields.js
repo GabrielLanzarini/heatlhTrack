@@ -1,3 +1,10 @@
+
+export const emailErr = ({ email }) => {
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+    return emailRegex.test(email) ? "" : "Por favor insira um email valido!"
+}
+
+
 export const CPFValidator = (cpf) => {
     cpf = cpf.replace(/[^\d]/g, "")
 
@@ -13,7 +20,6 @@ export const CPFValidator = (cpf) => {
         soma += parseInt(cpf.charAt(i)) * (10 - i)
     }
     const primeiroDigito = 11 - (soma % 11)
-
     soma = 0
     for (let i = 0; i < 10; i++) {
         soma += parseInt(cpf.charAt(i)) * (11 - i)
@@ -29,7 +35,6 @@ export const CPFValidator = (cpf) => {
             return false
         }
     }
-
     if (segundoDigito === 10 || segundoDigito === 11) {
         if (segundoDigito !== parseInt(cpf.charAt(10))) {
             return false
@@ -39,6 +44,5 @@ export const CPFValidator = (cpf) => {
             return false
         }
     }
-
     return true
 }
